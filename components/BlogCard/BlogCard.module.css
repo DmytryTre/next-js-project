@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    padding: 10px;
+    background-color: var(--white);
+    border-radius: 5px;
+    border: 1px solid var(--grey-light);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tagTitle.tagTitle {
+    color: var(--grey-dark);
+    font-weight: bold;
+}

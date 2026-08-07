@@ -1,0 +1,23 @@
+.h1 {
+    font-size: 34;
+    font-weight: 500;
+    line-height: 35px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.h2 {
+    font-size: 28;
+    font-weight: 500;
+    line-height: 30px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.h3 {
+    font-size: 18;
+    font-weight: 500;
+    line-height: 27px;
+    margin: 0;
+    font-weight: bold;
+}

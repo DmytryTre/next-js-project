@@ -13,7 +13,11 @@ export const BlogCard = ({}: BlogCardProps): React.ReactElement => {
 
   return (
     <div className={styles.container}>
-      <CardImage source="./" />
+      <CardImage
+        source="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        width={330} /* Временная дефолтная ширина */
+        height={190}
+      />
       <div className={styles.header}>
         <Tags tagsData={myElements} />
         <LikeButton>

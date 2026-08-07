@@ -1,0 +1,17 @@
+.button {
+  display: flex;
+  align-items: center;
+  background: none;
+
+  padding: 5px;
+
+  cursor: pointer;
+  border: 0;
+
+  transition: all 0.2s;
+}
+
+.like {
+  display: inline-block;
+  margin-left: 10px;
+}

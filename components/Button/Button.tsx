@@ -8,13 +8,24 @@ export const Button = ({
   arrow = 'none',
   children,
   className,
+  icon: Icon, // Забираем иконку и переименовываем с большой буквы
   ...props
 }: ButtonProps): React.ReactElement => (
   <button
-    className={cn(styles.button, className, { [styles[appearance]]: appearance })}
+    className={cn(styles.button, className, {
+      [styles[appearance]]: appearance,
+      [styles.iconOnly]: !children && Icon,
+    })}
     {...props}
   >
-    {children}
+    {Icon && (
+      <span className={styles.iconWrapper}>
+        <Icon />
+      </span>
+    )}
+
+    {children && <span className={styles.text}>{children}</span>}
+
     {arrow !== 'none' && (
       <span className={cn(styles.arrow, { [styles[arrow]]: arrow })}>
         <ArrowIcon />

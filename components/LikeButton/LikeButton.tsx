@@ -1,15 +1,19 @@
 import styles from './LikeButton.module.css';
 import { LikeButtonProps } from './LikeButton.props';
-import Like from './like.svg';
+import Like from '../../public/like.svg';
 import cn from 'classnames';
 
 export const LikeButton = ({
-  children,
+  isPress = false,
+  onToggleLike,
   className,
   ...props
 }: LikeButtonProps): React.ReactElement => (
-  <button className={cn(styles.button, className)} {...props}>
-    {children}
+  <button
+    onClick={onToggleLike ? () => onToggleLike(!isPress) : undefined}
+    className={cn(styles.button, { [styles.press]: isPress }, className)}
+    {...props}
+  >
     <span className={styles.like}>
       <Like />
     </span>

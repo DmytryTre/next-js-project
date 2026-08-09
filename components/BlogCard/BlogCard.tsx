@@ -1,6 +1,6 @@
 import { BlogCardProps } from './BlogCard.props';
 import styles from './BlogCard.module.css';
-import { Button, CardImage, Htag, LikeButton, P, Tags } from '@/components';
+import { Button, CardImage, Htag, LikeCounterButton, P, Tags } from '@/components';
 import { ReactNode } from 'react';
 
 export const BlogCard = ({}: BlogCardProps): React.ReactElement => {
@@ -15,14 +15,14 @@ export const BlogCard = ({}: BlogCardProps): React.ReactElement => {
     <div className={styles.container}>
       <CardImage
         source="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-        width={330} /* Временная дефолтная ширина */
+        width={330}
         height={190}
       />
       <div className={styles.header}>
         <Tags tagsData={myElements} />
-        <LikeButton>
+        <LikeCounterButton>
           <P size="s">1</P>
-        </LikeButton>
+        </LikeCounterButton>
       </div>
       <Htag Tag="h3">Как работать с CSS Grid</Htag>
       <P size="m">

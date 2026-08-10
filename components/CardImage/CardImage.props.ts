@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import { ImageProps } from 'next/image';
 
-export interface CardImageProps {
+export interface CardImageProps extends Partial<ImageProps> {
   source: string;
   size?: 's' | 'm';
 }

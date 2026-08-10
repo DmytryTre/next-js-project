@@ -1,17 +1,31 @@
 .button {
-  display: flex;
   align-items: center;
   background: none;
-
-  padding: 5px;
-
   cursor: pointer;
   border: 0;
-
-  transition: all 0.2s;
 }
 
 .like {
-  display: inline-block;
-  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--grey-darker);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.like svg {
+  fill: none;
+  stroke: var(--grey-darker);
+}
+
+.press .like {
+  background-color: var(--grey-darker);
+  border-color: var(--grey-darker);
+}
+
+.press .like svg {
+  stroke: var(--white);
 }

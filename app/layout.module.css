@@ -1,0 +1,25 @@
+.body {
+  display: grid;
+  justify-items: center;
+  padding: 0 30px ;
+}
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   justify-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+@media (max-width: 1110px) {
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 765px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}

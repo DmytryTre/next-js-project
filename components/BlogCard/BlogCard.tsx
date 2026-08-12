@@ -28,7 +28,7 @@ export const BlogCard = ({ post }: BlogCardProps): React.ReactElement => {
       <P size="m">{post.body}</P>
 
       <P size="s">3 минуты</P>
-      <Button appearance="ghost" arrow="right">
+      <Button appearance="ghost" arrow="right" href={`${post.id}`}>
         Перейти
       </Button>
     </div>

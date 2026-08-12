@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './Button.module.css';
 import { ButtonProps } from './Button.props';
 import ArrowIcon from './arrow.svg';
@@ -8,28 +9,44 @@ export const Button = ({
   arrow = 'none',
   children,
   className,
-  icon: Icon, // Забираем иконку и переименовываем с большой буквы
+  icon: Icon,
+  href,
   ...props
-}: ButtonProps): React.ReactElement => (
-  <button
-    className={cn(styles.button, className, {
-      [styles[appearance]]: appearance,
-      [styles.iconOnly]: !children && Icon,
-    })}
-    {...props}
-  >
-    {Icon && (
-      <span className={styles.iconWrapper}>
-        <Icon />
-      </span>
-    )}
+}: ButtonProps): React.ReactElement => {
+  const buttonClass = cn(styles.button, className, {
+    [styles[appearance]]: appearance,
+    [styles.iconOnly]: !children && Icon,
+  });
 
-    {children && <span className={styles.text}>{children}</span>}
+  const renderContent = () => (
+    <>
+      {Icon && (
+        <span className={styles.iconWrapper}>
+          <Icon />
+        </span>
+      )}
 
-    {arrow !== 'none' && (
-      <span className={cn(styles.arrow, { [styles[arrow]]: arrow })}>
-        <ArrowIcon />
-      </span>
-    )}
-  </button>
-);
+      {children && <span className={styles.text}>{children}</span>}
+
+      {arrow !== 'none' && (
+        <span className={cn(styles.arrow, { [styles[arrow]]: arrow })}>
+          <ArrowIcon />
+        </span>
+      )}
+    </>
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className={buttonClass} {...(props as any)}>
+        {renderContent()}
+      </Link>
+    );
+  }
+
+  return (
+    <button className={buttonClass} {...props}>
+      {renderContent()}
+    </button>
+  );
+};

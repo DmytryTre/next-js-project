@@ -3,7 +3,7 @@ import styles from './BlogCard.module.css';
 import { Button, CardImage, Htag, LikeCounterButton, P, Tags } from '@/components';
 import { ReactNode } from 'react';
 
-export const BlogCard = ({}: BlogCardProps): React.ReactElement => {
+export const BlogCard = ({ post }: BlogCardProps): React.ReactElement => {
   const myElements: ReactNode[] = [
     <P size="s" className={styles.tagTitle}>
       Front-end
@@ -18,23 +18,19 @@ export const BlogCard = ({}: BlogCardProps): React.ReactElement => {
         width={330}
         height={190}
       />
-      <div className={styles.header}>
-        <Tags tagsData={myElements} />
-        <LikeCounterButton>
-          <P size="s">1</P>
-        </LikeCounterButton>
-      </div>
-      <Htag Tag="h4">Как работать с CSS Grid</Htag>
-      <P size="m">
-        Грид-раскладка (CSS Grid Layout) представляет собой двумерную систему сеток в CSS.
-        Гриды подойдут и для верстки основных областей страницы..
-      </P>
-      <div className={styles.footer}>
-        <P size="s">3 минуты</P>
-        <Button appearance="ghost" arrow="right">
-          Перейти
-        </Button>
-      </div>
+
+      <Tags tagsData={myElements} />
+      <LikeCounterButton>
+        <P size="s">1</P>
+      </LikeCounterButton>
+
+      <Htag Tag="h4">{post.title}</Htag>
+      <P size="m">{post.body}</P>
+
+      <P size="s">3 минуты</P>
+      <Button appearance="ghost" arrow="right" href={`${post.id}`}>
+        Перейти
+      </Button>
     </div>
   );
 };

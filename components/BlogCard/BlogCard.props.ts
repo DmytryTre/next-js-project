@@ -1,3 +1,6 @@
+import { Post } from '@/interfaces/blog.interface';
 import { ReactNode } from 'react';
 
-export interface BlogCardProps {}
+export interface BlogCardProps {
+  post: Post;
+}

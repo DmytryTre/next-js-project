@@ -5,4 +5,5 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   appearance: 'ghost' | 'primary';
   icon?: ElementType;
   arrow?: 'right' | 'none';
+  href?: string;
 }

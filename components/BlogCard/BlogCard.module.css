@@ -1,27 +1,28 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 350px;
-    padding: 10px;
-    background-color: var(--white);
-    border-radius: 5px;
-    border: 1px solid var(--grey-light);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto auto auto auto;
+  gap: 10px;
+  align-items: center;
+  grid-template-areas:
+    "image   image"
+    "tags    like"
+    "title   title"
+    "descr   descr"
+    "time    button";
+  max-width: 360px;
+  padding: 15px;
+  background-color: var(--white);
+  border-radius: 5px;
+  border: 1px solid var(--grey-light);
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.tagTitle.tagTitle {
-    color: var(--grey-dark);
-    font-weight: bold;
-}
+.container > :nth-child(1) { grid-area: image; }
+.container > :nth-child(2) { grid-area: tags; }
+.container > :nth-child(3) { grid-area: like; }
+.container > :nth-child(3) { justify-self: end }
+.container > :nth-child(4) { grid-area: title; }
+.container > :nth-child(5) { grid-area: descr; }
+.container > :nth-child(6) { grid-area: time; }
+.container > :nth-child(7) { grid-area: button; }
+.container > :nth-child(7) { justify-self: end }

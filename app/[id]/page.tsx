@@ -1,5 +1,10 @@
 import getPosts from '@/api/posts';
 import { Metadata } from 'next';
+import { PageInfo } from '../components/PageInfo/PageInfo';
+import { ReactNode } from 'react';
+import { LikeCounterButton, P } from '@/components';
+import { LikeBlog } from '../components/LikeBlog/LikeBlog';
+import styles from './page.module.css';
 
 export async function generateStaticParams() {
   const posts = await getPosts();
@@ -24,6 +29,25 @@ export const metadata: Metadata = {
 export default async function PageCourses({ params }: Props) {
   const { id } = await params;
   const post = await getPosts(id);
+  const tags: ReactNode[] = [
+    <P size="s" key="title">
+      Front-end
+    </P>,
+    <P size="s" key="date">
+      1 месяц назад
+    </P>,
+    <P size="s" key="min">
+      3 минуты
+    </P>,
+    <LikeCounterButton key="like">
+      <P size="s">1</P>
+    </LikeCounterButton>,
+  ];
 
-  return <div>курсы</div>;
+  return (
+    <div className={styles.container}>
+      {post && <PageInfo tags={tags} {...post} />}
+      <LikeBlog id={id} />
+    </div>
+  );
 }

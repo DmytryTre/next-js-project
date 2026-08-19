@@ -6,3 +6,5 @@ export * from './LikeCounterButton/LikeCounterButton';
 export * from './LikeButton/LikeButton';
 export * from './Tags/Tags';
 export * from './BlogCard/BlogCard';
+export * from './Input/Input';
+export * from './TextArea/TextArea';

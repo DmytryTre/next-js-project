@@ -5,7 +5,7 @@ import { Htag, LikeCounterButton, P } from '@/components';
 import { LikeBlog } from '../components/LikeBlog/LikeBlog';
 import styles from './page.module.css';
 import getComments from '@/api/comments';
-import { PageInfo, Comment } from '../components';
+import { PageInfo, Comment, CommentForm } from '../components';
 
 export async function generateStaticParams() {
   const posts = await getPosts();
@@ -53,6 +53,7 @@ export default async function PageCourses({ params }: Props) {
       <LikeBlog id={id} />
       <Htag Tag="h2">Комментарии</Htag>
       {comments && comments.map((c) => <Comment key={c.id} {...c} />)}
+      <CommentForm blogId={id} />
     </div>
   );
 }

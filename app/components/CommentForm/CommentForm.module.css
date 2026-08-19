@@ -1,0 +1,33 @@
+.reviewForm {
+  font-size: 14px;
+  line-height: 24px;
+  display: grid;
+  gap: 20px 30px;
+  align-items: center;
+}
+
+.panel {
+  padding: 20px;
+  position: relative;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.success {
+  background: var(--green-light);
+}
+
+.successTitle {
+  font-weight: bold;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.error .close path {
+  stroke: var(--red);
+}

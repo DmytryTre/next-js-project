@@ -40,6 +40,7 @@ export const CommentForm = ({
           {...register('name', { required: { value: true, message: 'Заполните имя' } })}
           placeholder="Имя"
           error={errors.name}
+          aria-label="Ваше имя"
         />
         <TextArea
           {...register('comment', {
@@ -48,6 +49,7 @@ export const CommentForm = ({
           placeholder="Текст комментария"
           className={styles.description}
           error={errors.comment}
+          aria-label="Текст вашего комментария"
         />
         <div className={styles.submit}>
           <Button appearance="primary">Отправить</Button>
@@ -55,10 +57,17 @@ export const CommentForm = ({
       </div>
 
       {isSuccess && (
-        <div className={cn(styles.success, styles.panel)}>
+        <div className={cn(styles.success, styles.panel)} role="alert">
           <div className={styles.successTitle}>Ваш отзыв отправлен</div>
           <div>Спасибо, ваш отзыв будет опубликован после проверки.</div>
-          <CloseIcon className={styles.close} onClick={() => setIsSuccess(false)} />
+          <button
+            type="button"
+            className={styles.close}
+            onClick={() => setIsSuccess(false)}
+            aria-label="Закрыть уведомление"
+          >
+            <CloseIcon aria-hidden="true" />
+          </button>
         </div>
       )}
     </form>

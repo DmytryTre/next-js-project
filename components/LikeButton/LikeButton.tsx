@@ -10,12 +10,16 @@ export const LikeButton = ({
   ...props
 }: LikeButtonProps): React.ReactElement => (
   <button
+    type="button"
     onClick={onToggleLike ? () => onToggleLike(!isPress) : undefined}
+    aria-label="Поставить лайк"
+    aria-pressed={isPress}
+
     className={cn(styles.button, { [styles.press]: isPress }, className)}
     {...props}
   >
     <span className={styles.like}>
-      <Like />
+      <Like aria-hidden="true" />{' '}
     </span>
   </button>
 );

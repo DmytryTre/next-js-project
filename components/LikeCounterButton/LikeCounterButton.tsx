@@ -8,7 +8,7 @@ export const LikeCounterButton = ({
   className,
   ...props
 }: LikeCounterButtonProps): React.ReactElement => (
-  <button className={cn(styles.button, className)} {...props}>
+  <button aria-label="Кнопка лайк" className={cn(styles.button, className)} {...props}>
     {children}
     <span className={styles.like}>
       <Like />

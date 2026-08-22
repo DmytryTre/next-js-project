@@ -58,7 +58,14 @@ export const CommentForm = ({
         <div className={cn(styles.success, styles.panel)}>
           <div className={styles.successTitle}>Ваш отзыв отправлен</div>
           <div>Спасибо, ваш отзыв будет опубликован после проверки.</div>
-          <CloseIcon className={styles.close} onClick={() => setIsSuccess(false)} />
+          <button
+            type="button"
+            className={styles.close}
+            onClick={() => setIsSuccess(false)}
+            aria-label="Закрыть уведомление"
+          >
+            <CloseIcon aria-hidden="true" />
+          </button>
         </div>
       )}
     </form>

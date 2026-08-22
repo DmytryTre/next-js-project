@@ -26,6 +26,19 @@
   top: 20px;
   right: 20px;
   cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close:focus-visible {
+  outline: 2px solid var(--green, #26a65b);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 .error .close path {

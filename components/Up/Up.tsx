@@ -15,8 +15,13 @@ export const Up = (): React.ReactElement => {
   };
 
   return (
-    <motion.button className={styles.up} style={{ opacity }} onClick={scrollToTop}>
-      <UpIcon />
+    <motion.button
+      aria-label="Наверх"
+      className={styles.up}
+      style={{ opacity }}
+      onClick={scrollToTop}
+    >
+      <UpIcon aria-hidden="true" />
     </motion.button>
   );
 };

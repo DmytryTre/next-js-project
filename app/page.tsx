@@ -15,10 +15,17 @@ export default async function Home() {
   ];
 
   return (
-    <main className={styles.main}>
-      {posts?.map((item) => (
-        <BlogCard key={item.id} post={item} tags={tags} />
-      ))}
+    <main id="main-content" tabIndex={-1} className={styles.main}>
+      {/* Оборачиваем в маркированный список, у которого в CSS убраны точки */}
+      <ul className={styles.postsList} aria-label="Список публикаций блога">
+        {posts?.map((item) => {
+          return (
+            <li key={item.id}>
+              <BlogCard post={item} tags={tags} />
+            </li>
+          );
+        })}
+      </ul>
     </main>
   );
 }

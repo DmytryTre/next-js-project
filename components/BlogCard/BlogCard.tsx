@@ -29,7 +29,12 @@ export const BlogCard = ({ post, tags }: BlogCardProps): React.ReactElement => (
     <P size="m">{post.body}</P>
 
     <P size="s">3 минуты</P>
-    <Button appearance="ghost" arrow="right" href={`${post.id}`}>
+    <Button
+      aria-label={`Перейти к статье: ${post.title}`}
+      appearance="ghost"
+      arrow="right"
+      href={`${post.id}`}
+    >
       Перейти
     </Button>
   </motion.div>

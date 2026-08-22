@@ -16,7 +16,6 @@ export default async function Home() {
 
   return (
     <main id="main-content" tabIndex={-1} className={styles.main}>
-      {/* Оборачиваем в маркированный список, у которого в CSS убраны точки */}
       <ul className={styles.postsList} aria-label="Список публикаций блога">
         {posts?.map((item) => {
           return (

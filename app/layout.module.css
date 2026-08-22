@@ -26,6 +26,20 @@
   justify-content: center;
 }
 
+.skipLink {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background: var(--primary, #7653fc);
+  color: white;
+  z-index: 1;
+  transition: top 0.2s ease;
+}
+
+.skipLink:focus-visible {
+  top: 0;
+}
+
 @media (max-width: 1110px) {
   .postsList {
     grid-template-columns: repeat(2, 1fr);

@@ -23,6 +23,9 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="ru" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className={styles.body}>
+        <a href="#main-content" className={styles.skipLink}>
+          Перейти к основному содержимому
+        </a>
         <Header />
         {children}
         <Up />

@@ -25,6 +25,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
+
   const id = resolvedParams.id;
 
   const post = await getPosts(id);
@@ -36,8 +37,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function PageCourses({ params }: Props) {
   const { id } = await params;
-  const post = await getPosts(id);
-  const comments = await getComments(id);
+
+  const [post, comments] = await Promise.all([getPosts(id), getComments(id)]);
 
   const tags: ReactNode[] = [
     <P size="s" key="title">

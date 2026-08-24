@@ -23,9 +23,16 @@ type Props = {
   params: Promise<{ id: string }>;
 };
 
-export const metadata: Metadata = {
-  title: 'Страница',
-};
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const resolvedParams = await params;
+  const id = resolvedParams.id;
+
+  const post = await getPosts(id);
+
+  return {
+    title: post?.title || 'Пост',
+  };
+}
 
 export default async function PageCourses({ params }: Props) {
   const { id } = await params;

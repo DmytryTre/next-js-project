@@ -1,8 +1,8 @@
 .button {
-  align-items: center;
-  background: none;
   cursor: pointer;
+  align-items: center;
   border: 0;
+  background: none;
 }
 
 .button:focus-visible {
@@ -14,10 +14,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 48px;
   height: 48px;
   border: 1px solid var(--grey-darker);
   border-radius: 50%;
+
   transition: all 0.2s ease;
 }
 
@@ -27,8 +29,8 @@
 }
 
 .press .like {
-  background-color: var(--grey-darker);
   border-color: var(--grey-darker);
+  background-color: var(--grey-darker);
 }
 
 .press .like svg {

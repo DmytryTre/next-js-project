@@ -1,12 +1,13 @@
 .button {
+  cursor: pointer;
+
   display: flex;
   align-items: center;
-  background: none;
 
   padding: 5px;
-
-  cursor: pointer;
   border: 0;
+
+  background: none;
 
   transition: all 0.2s;
 }
